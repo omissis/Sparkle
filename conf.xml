@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webapp>
+  <url></url>
+  <name></name>
+  <navbar>0</navbar>
+  <status>0</status>
+  <navkeys>0</navkeys>
+</webapp>
+<shortcuts>
+  <desktop>0</desktop>
+  <appfolder>0</appfolder>
+</shortcuts>
+<icon>
+  <path></path>
+</icon>
