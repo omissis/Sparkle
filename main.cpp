@@ -1,24 +1,16 @@
 #include <QtGui/QApplication>
-#include "spirit.h"
-#include "vision.h"
+#include "loader.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QMainWindow *w;
 
     // Load xml config file
+    Loader *loader = new Loader(w);
 
     // Check the app mode and show the correct one
-
-    // Remember to pass the xml obj to the window (no need to parse it twice)
-
-    // if (mode == "spirit") {
-        Spirit w;
-        w.show();
-    // else {
-//        Vision w;
-//        w.show();
-    //}
+    loader->show();
 
     return a.exec();
 }

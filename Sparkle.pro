@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui webkit
+QT       += core gui webkit xml
 
 TARGET = Spirit
 TEMPLATE = app
@@ -12,11 +12,15 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     vision.cpp \
-    spirit.cpp
+    spirit.cpp \
+    xmlhandler.cpp \
+    loader.cpp
 
 HEADERS  += \
     vision.h \
-    spirit.h
+    spirit.h \
+    xmlhandler.h \
+    loader.h
 
 FORMS    += \
     vision.ui \
