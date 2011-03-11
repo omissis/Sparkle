@@ -1,25 +1,22 @@
 #ifndef LOADER_H
 #define LOADER_H
 
-#include <QMessageBox>
-#include "xmlhandler.h"
 #include "spirit.h"
 #include "vision.h"
+#include <QXmlResultItems>
+#include <QDebug>
+#include <QFile>
 
-class Loader
-{
+class Loader : public QObject {
+Q_OBJECT
+
 private:
-    struct {
-        int code;
-        QString message;
-    } status;
-    QString mode;
-    QXmlSimpleReader *reader;
-    XmlHandler *handler;
     QMainWindow *mw;
+    QFile *cf;
 
 public:
-    Loader(QMainWindow *w);
+    Loader();
+    ~Loader();
     void show();
 };
 

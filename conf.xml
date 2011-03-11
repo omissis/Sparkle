@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sparkle>
-    <webapp>
-      <url></url>
-      <name></name>
-      <navbar>0</navbar>
-      <status>0</status>
-      <navkeys>0</navkeys>
-    </webapp>
-    <shortcuts>
-      <desktop>0</desktop>
-      <appfolder>0</appfolder>
-    </shortcuts>
-    <icon>
-      <path></path>
-    </icon>
+  <mode>vision</mode>
+  <webapp>
+    <url>http://www.agavee.com/</url>
+    <name></name>
+    <navbar>0</navbar>
+    <status>0</status>
+    <navkeys>0</navkeys>
+  </webapp>
+  <shortcuts>
+    <desktop>0</desktop>
+    <appfolder>0</appfolder>
+  </shortcuts>
+  <icon>
+    <path></path>
+  </icon>
 </sparkle>

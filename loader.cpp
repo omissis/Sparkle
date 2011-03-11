@@ -1,42 +1,37 @@
 #include "loader.h"
 
-Loader::Loader(QMainWindow *w)
-{
-    mw = w;
-    // Setup the reader and the handler
-    handler = new XmlHandler();
-    reader = new QXmlSimpleReader();
-
-    reader->setContentHandler(handler);
-    reader->setErrorHandler(handler);
+Loader::Loader() : QObject() {
+    QString fileName = ":/conf/conf.xml";
 
     // Open config file
-    QString fileName = ":/conf/conf.xml";
-    QFile *file = new QFile(fileName);
-
-    if (!file->open(QFile::ReadOnly | QFile::Text)) {
-       status.message = QObject::tr("Cannot read config file.");
+    cf = new QFile(fileName);
+    if (!cf->open(QFile::ReadOnly | QFile::Text)) {
+       qWarning() << QObject::tr("Cannot read config file.");
+       return;
     }
-
-    QXmlInputSource *xmlInputSource = new QXmlInputSource(file);
-
-    // Parse config file
-    if (reader->parse(xmlInputSource)) {
-        status.message = QObject::tr("File loaded.");
-    }
-
-    free(xmlInputSource);
 }
 
-void Loader::show()
-{
-    qWarning() << status.message;
-    mw = new Spirit();
-    // if (mode == "spirit") {
-        mw->show();
-    // else {
-//        Vision w;
-//        w.show();
-    //}
+Loader::~Loader() {
+}
+
+void Loader::show() {
+    QXmlQuery q;
+    QString mode;
+
+    q.setFocus(cf);
+    q.setQuery("sparkle/mode/text()");
+    if (!q.isValid()) return;
+    q.evaluateTo(&mode);
+
+    // rewind the file pointer to the beginning
+    cf->seek(0);
+
+    if (mode.trimmed() == "spirit") {
+        mw = new Spirit(cf);
+    } else {
+        mw = new Vision(cf);
+    }
+
+    mw->show();
     return;
 }

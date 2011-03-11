@@ -1,7 +1,7 @@
 #include "spirit.h"
 #include "ui_spirit.h"
 
-Spirit::Spirit(QWidget *parent) :
+Spirit::Spirit(QFile *file, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Spirit)
 {
