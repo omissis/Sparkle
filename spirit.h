@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QFile>
+#include <QDebug>
 
 namespace Ui {
     class Spirit;

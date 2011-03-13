@@ -6,7 +6,7 @@
 
 QT       += core gui webkit xml xmlpatterns
 
-TARGET = Spirit
+TARGET = Sparkle
 TEMPLATE = app
 
 
